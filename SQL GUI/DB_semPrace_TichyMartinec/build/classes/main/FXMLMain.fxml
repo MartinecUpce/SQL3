@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1148.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.FXMLMainController">
+   <children>
+      <BorderPane layoutX="-1.0" prefHeight="768.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                <Tab text="Vyučující">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <BorderPane layoutX="2.0" layoutY="1.0" prefHeight="738.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <top>
+                                    <TableView fx:id="tableVyucujici" onMouseClicked="#getVyucujiciFromTableAction" prefHeight="253.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
+                                      <columns>
+                                        <TableColumn fx:id="colVyucId" prefWidth="75.0" text="id" />
+                                        <TableColumn fx:id="colVyucJmeno" prefWidth="188.0" text="Jméno" />
+                                          <TableColumn fx:id="colVyucPrijmeni" prefWidth="217.0" text="Příjmení" />
+                                          <TableColumn fx:id="colVyucEmail" prefWidth="183.0" text="Email" />
+                                          <TableColumn fx:id="colVyucTelefon" prefWidth="145.0" text="Telefon" />
+                                          <TableColumn fx:id="colVyucKatedra" prefWidth="203.0" text="Katedra" />
+                                      </columns>
+                                    </TableView>
+                                 </top>
+                                 <left>
+                                    <HBox prefHeight="485.0" prefWidth="494.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button fx:id="buttonVyucujiciSmazat" disable="true" mnemonicParsing="false" onAction="#deleteVyucujiciAction" text="Smazat" />
+                                       </children>
+                                    </HBox>
+                                 </left>
+                                 <center>
+                                    <GridPane BorderPane.alignment="CENTER">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Jméno:" />
+                                          <Label text="Příjmení:" GridPane.rowIndex="1" />
+                                          <Label text="Email:" GridPane.rowIndex="2" />
+                                          <Label text="Telefon:" GridPane.rowIndex="3" />
+                                          <Label text="Katedra:" GridPane.rowIndex="4" />
+                                          <TextField fx:id="textVyucujiciJmeno" GridPane.columnIndex="1" />
+                                          <TextField fx:id="textVyucujiciPrijmeni" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextField fx:id="textVyucujiciEmail" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <TextField fx:id="textVyucujiciTelefon" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <ComboBox fx:id="comboVyucujiciKatedra" prefHeight="25.0" prefWidth="274.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Button fx:id="buttonVyucujiciVytvorit" mnemonicParsing="false" onAction="#createVyucujiciAction" text="Vytvořit" GridPane.rowIndex="5" />
+                                          <Button fx:id="buttonVyucujiciUpravit" disable="true" mnemonicParsing="false" onAction="#editVyucujiciAction" text="Upravit" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                       </children>
+                                    </GridPane>
+                                 </center>
+                              </BorderPane>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="tabRozvrh" text="Rozvrh">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <BorderPane layoutX="-2.0" layoutY="-3.0" prefHeight="743.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <top>
+                                    <VBox prefHeight="277.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <HBox prefHeight="74.0" prefWidth="1024.0">
+                                             <children>
+                                                <Label text="Vyučující: " />
+                                                <ComboBox fx:id="comboSelectRozvrh" onAction="#onSelectRozvrhAction" prefWidth="150.0" />
+                                                <Label text="Rok: " />
+                                                <ComboBox fx:id="comboRozvrhRok" onAction="#onSelectRozvrhAction" prefWidth="150.0" />
+                                             </children>
+                                          </HBox>
+                                          <TableView fx:id="tableRozvrh" onMouseClicked="#getRozvrhFromTableAction" prefHeight="286.0" prefWidth="1148.0">
+                                            <columns>
+                                              <TableColumn fx:id="colRozvrhId" prefWidth="75.0" text="Id" />
+                                              <TableColumn fx:id="colRozvrhTyden" prefWidth="75.0" text="Týden" />
+                                                <TableColumn fx:id="colRozvrhOd" prefWidth="75.0" text="Od" />
+                                                <TableColumn fx:id="colRozvrhDo" prefWidth="75.0" text="Do" />
+                                                <TableColumn fx:id="colRozvrhSchvaleno" prefWidth="117.0" text="Schváleno" />
+                                                <TableColumn fx:id="colRozvrhPredmet" prefWidth="120.0" text="Předmět" />
+                                                <TableColumn fx:id="colRozvrhDen" prefWidth="172.0" text="Den" />
+                                                <TableColumn fx:id="colRozvrhMistnost" prefWidth="136.0" text="Místnost" />
+                                                <TableColumn fx:id="colRozvrhVyucujici" prefWidth="140.0" text="Vyučující" />
+                                                <TableColumn fx:id="colRozvrhZpusob" prefWidth="137.0" text="Způsob výuky" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </VBox>
+                                 </top>
+                                 <center>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <left>
+                                          <HBox prefHeight="466.0" prefWidth="499.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <Button fx:id="buttonRozvrhSmazat" disable="true" mnemonicParsing="false" onAction="#deleteRozvrhAction" text="Smazat" />
+                                             </children>
+                                          </HBox>
+                                       </left>
+                                       <center>
+                                          <GridPane BorderPane.alignment="CENTER">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Label text="Týden: " />
+                                                <Label text="Od: " GridPane.rowIndex="1" />
+                                                <Label text="Do:" GridPane.rowIndex="2" />
+                                                <Label text="Schváleno: " GridPane.rowIndex="4" />
+                                                <Label text="Předmět: " GridPane.rowIndex="6" />
+                                                <Label text="Den: " GridPane.rowIndex="7" />
+                                                <Label text="Místnost: " GridPane.rowIndex="8" />
+                                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                                   <children>
+                                                      <RadioButton fx:id="radioRozvrhVsechny" mnemonicParsing="false" selected="true" text="Všechny">
+                                                         <toggleGroup>
+                                                            <ToggleGroup fx:id="tyden" />
+                                                         </toggleGroup>
+                                                      </RadioButton>
+                                                      <RadioButton fx:id="radioRozvrhSudy" mnemonicParsing="false" text="Sudý" toggleGroup="$tyden" />
+                                                      <RadioButton fx:id="radioRozvrhLichy" mnemonicParsing="false" text="Lichý" toggleGroup="$tyden" />
+                                                   </children>
+                                                </HBox>
+                                                <TextField fx:id="textRozvrhOd" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <TextField fx:id="textRozvrhDo" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <CheckBox fx:id="checkRozvrhSchvaleno" mnemonicParsing="false" text="Schváleno" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                <ComboBox fx:id="comboRozvrhPredmet" prefHeight="25.0" prefWidth="272.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                <ComboBox fx:id="comboRozvrhDen" prefHeight="25.0" prefWidth="285.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                <ComboBox fx:id="comboRozvrhMistnost" prefHeight="25.0" prefWidth="304.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                                <Button fx:id="buttonRozvrhVytvorit" mnemonicParsing="false" onAction="#createRozvrhAction" text="Vytvořit" GridPane.rowIndex="9" />
+                                                <Button fx:id="buttonRozvrhUpravit" disable="true" mnemonicParsing="false" onAction="#editRozvrhAction" text="Upravit" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                                <Label text="Kapacita:" GridPane.rowIndex="5" />
+                                                <Spinner fx:id="spinnerRozvrhKapacita" editable="true" prefHeight="31.0" prefWidth="98.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                <Label text="Způsob výuky:" GridPane.rowIndex="3" />
+                                                <ComboBox fx:id="comboRozvrhZpusob" prefHeight="31.0" prefWidth="272.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                             </children>
+                                          </GridPane>
+                                       </center>
+                                    </BorderPane>
+                                 </center>
+                              </BorderPane>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Předměty">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <BorderPane prefHeight="739.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <top>
+                                    <TableView fx:id="tablePredmet" onMouseClicked="#getPredmetFromTableAction" prefHeight="274.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
+                                      <columns>
+                                        <TableColumn fx:id="colPredmetId" prefWidth="75.0" text="id" />
+                                        <TableColumn fx:id="colPredmetNazev" prefWidth="288.0" text="Název" />
+                                          <TableColumn fx:id="colPredmetZkratka" prefWidth="75.0" text="Zkratka" />
+                                          <TableColumn fx:id="colPrdemtZpusob" prefWidth="171.0" text="Způsob zakončení" />
+                                          <TableColumn fx:id="colPredmetSemestr" prefWidth="65.0" text="Semestr" />
+                                          <TableColumn fx:id="colPredmetRocnik" prefWidth="97.0" text="Ročník" />
+                                          <TableColumn fx:id="colPredmetPlan" prefWidth="106.0" text="Plán" />
+                                          <TableColumn fx:id="colPredmetKategorie" prefWidth="144.0" text="Kategorie" />
+                                      </columns>
+                                    </TableView>
+                                 </top>
+                                 <center>
+                                    <GridPane prefHeight="455.0" prefWidth="557.0" BorderPane.alignment="CENTER">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Název: " />
+                                          <Label text="Způsob zakončení: " GridPane.rowIndex="2" />
+                                          <Button fx:id="buttonPredmetVytvorit" mnemonicParsing="false" onAction="#createPredmetAction" text="Vytvořit: " GridPane.rowIndex="7" />
+                                          <Button fx:id="buttonPredmetUpravit" disable="true" mnemonicParsing="false" onAction="#editPredmetAction" text="Upravit" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                          <TextField fx:id="textPredmetNazev" GridPane.columnIndex="1" />
+                                          <ComboBox fx:id="comboPredmetZakonceni" prefHeight="25.0" prefWidth="296.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label text="Zkratka:" GridPane.rowIndex="1" />
+                                          <Label text="Semestr: " GridPane.rowIndex="3" />
+                                          <Label text="Kategorie: " GridPane.rowIndex="4" />
+                                          <Label text="Ročník: " GridPane.rowIndex="5" />
+                                          <Label text="Plán: " GridPane.rowIndex="6" />
+                                          <ComboBox fx:id="comboPredmetKategorie" prefHeight="25.0" prefWidth="295.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Spinner fx:id="spinnerPredmetRocnik" prefHeight="25.0" prefWidth="152.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <ComboBox fx:id="comboPredmetPlan" prefHeight="25.0" prefWidth="295.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                          <TextField fx:id="textPredmetZkratka" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <children>
+                                                <RadioButton fx:id="radPredmetSemestrLetni" mnemonicParsing="false" selected="true" text="Letní">
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="semestr" />
+                                                   </toggleGroup>
+                                                </RadioButton>
+                                                <RadioButton fx:id="radPredmetSemestrZimni" mnemonicParsing="false" text="Zímní" toggleGroup="$semestr" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </GridPane>
+                                 </center>
+                                 <left>
+                                    <VBox prefHeight="455.0" prefWidth="524.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button fx:id="buttonPredmetSmazat" disable="true" mnemonicParsing="false" onAction="#deletePredmetAction" text="Smazat" />
+                                          <Label text="Učitel v předmětu">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <GridPane prefHeight="94.0" prefWidth="524.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="169.0" minWidth="10.0" prefWidth="97.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="250.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints />
+                                              <RowConstraints />
+                                                <RowConstraints />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Label text="Učitel:" GridPane.rowIndex="3" />
+                                                <ComboBox fx:id="comboPredmetVyucujici" prefHeight="31.0" prefWidth="282.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <Label text="Role:" GridPane.rowIndex="4" />
+                                                <HBox prefHeight="28.0" prefWidth="328.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                   <children>
+                                                      <RadioButton fx:id="radPredmetRoleGarant" mnemonicParsing="false" text="Garant">
+                                                         <toggleGroup>
+                                                            <ToggleGroup fx:id="vyuc_role" />
+                                                         </toggleGroup>
+                                                      </RadioButton>
+                                                      <RadioButton fx:id="radPredmetRolePrednasejici" mnemonicParsing="false" text="Přednášející" toggleGroup="$vyuc_role" />
+                                                      <RadioButton fx:id="radPredmetRoleCvicici" mnemonicParsing="false" selected="true" text="Cvičící" toggleGroup="$vyuc_role" />
+                                                      <RadioButton fx:id="radPredmetRoleOboje" mnemonicParsing="false" text="Oboje" toggleGroup="$vyuc_role" />
+                                                   </children>
+                                                </HBox>
+                                                <Label text="Hodinový fond:" GridPane.rowIndex="5" />
+                                                <Spinner fx:id="spinnerPredmetyHodiny" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                             </children>
+                                          </GridPane>
+                                          <HBox prefHeight="37.0" prefWidth="347.0">
+                                             <children>
+                                                <Button fx:id="buttonPlanAddVyucujici" mnemonicParsing="false" onAction="#addVyucujiciToPredmetAction" text="Přidat do předmětu" />
+                                                <Button fx:id="buttonPredmet" mnemonicParsing="false" onAction="#removeVyucujiciFromPredmetAction" text="Odebrat z předmětu" />
+                                             </children>
+                                          </HBox>
+                                          <ListView fx:id="listPredmetVyucujici" prefHeight="227.0" prefWidth="524.0" />
+                                       </children>
+                                    </VBox>
+                                 </left>
+                              </BorderPane>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Fakulty">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <BorderPane prefHeight="741.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <top>
+                                    <TableView fx:id="tableFakulta" onMouseClicked="#getFakultaFromTableAction" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                      <columns>
+                                        <TableColumn fx:id="colFakultaId" prefWidth="75.0" text="id" />
+                                        <TableColumn fx:id="colFakultaNazev" prefWidth="394.0" text="Název" />
+                                          <TableColumn fx:id="colFakultaZkratka" prefWidth="397.0" text="Zkratka" />
+                                      </columns>
+                                    </TableView>
+                                 </top>
+                                 <left>
+                                    <HBox prefHeight="541.0" prefWidth="485.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button fx:id="buttonFakultaSmazat" disable="true" mnemonicParsing="false" onAction="#deleteFakultaAction" text="Smazat" />
+                                       </children>
+                                    </HBox>
+                                 </left>
+                                 <center>
+                                    <GridPane BorderPane.alignment="CENTER">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Nazev: " />
+                                          <Label text="Zkratka: " GridPane.rowIndex="1" />
+                                          <TextField fx:id="textFakultaNazev" GridPane.columnIndex="1" />
+                                          <TextField fx:id="textFakultaZkratka" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Button fx:id="buttonFakultaVytvorit" mnemonicParsing="false" onAction="#createFakultaAction" text="Vytvořit" GridPane.rowIndex="2" />
+                                          <Button fx:id="buttonFakultaUpravit" disable="true" mnemonicParsing="false" onAction="#editFakultaAction" text="Upravit" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                       </children>
+                                    </GridPane>
+                                 </center>
+                              </BorderPane>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Pracoviště">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <BorderPane prefHeight="742.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <top>
+                                    <TableView fx:id="tableKatedra" onMouseClicked="#getKatedraFromTableAction" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                      <columns>
+                                        <TableColumn fx:id="colKatedraId" prefWidth="75.0" text="id" />
+                                        <TableColumn fx:id="colKatedraNazev" prefWidth="224.0" text="Název" />
+                                          <TableColumn fx:id="colKatedraZkratka" prefWidth="276.0" text="Zkratka" />
+                                          <TableColumn fx:id="colKatedraFakulta" prefWidth="263.0" text="Fakulta" />
+                                      </columns>
+                                    </TableView>
+                                 </top>
+                                 <left>
+                                    <HBox prefHeight="542.0" prefWidth="496.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button fx:id="buttonKatedraSmazat" disable="true" mnemonicParsing="false" onAction="#deleteKatedraAction" text="Smazat" />
+                                       </children>
+                                    </HBox>
+                                 </left>
+                                 <center>
+                                    <GridPane BorderPane.alignment="CENTER">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Název: " />
+                                          <Label text="Zkratka: " GridPane.rowIndex="1" />
+                                          <Label text="Fakulta: " GridPane.rowIndex="2" />
+                                          <TextField fx:id="textKatedraNazev" GridPane.columnIndex="1" />
+                                          <TextField fx:id="textKatedraZkratka" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <ComboBox fx:id="comboKatedraFakulta" prefHeight="25.0" prefWidth="320.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Button fx:id="buttonKatedraVytvorit" mnemonicParsing="false" onAction="#createKatedraAction" text="Vytvořit" GridPane.rowIndex="3" />
+                                          <Button fx:id="buttonKatedraUpravit" disable="true" mnemonicParsing="false" onAction="#editKatedraAction" text="Upravit" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                       </children>
+                                    </GridPane>
+                                 </center>
+                              </BorderPane>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Místnosti">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <BorderPane layoutY="7.0" prefHeight="736.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <top>
+                                    <TableView fx:id="tableMistnost" onMouseClicked="#getMistnostFromTableAction" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                      <columns>
+                                        <TableColumn fx:id="colMistnostId" prefWidth="75.0" text="id" />
+                                        <TableColumn fx:id="colMistnostOznaceni" prefWidth="144.0" text="Označení" />
+                                          <TableColumn fx:id="colMisnostKapacita" prefWidth="125.0" text="Kapacita" />
+                                      </columns>
+                                    </TableView>
+                                 </top>
+                                 <left>
+                                    <HBox prefHeight="536.0" prefWidth="494.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button fx:id="buttonMistnostSmazat" disable="true" mnemonicParsing="false" onAction="#deleteMistnostAction" text="Smazat" />
+                                          <Button fx:id="buttonMistnostFile" mnemonicParsing="false" onAction="#addMistnostFromFIle" text="Přidat ze souboru" />
+                                       </children>
+                                    </HBox>
+                                 </left>
+                                 <center>
+                                    <GridPane BorderPane.alignment="CENTER">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Označení: " />
+                                          <Label text="Kapacita: " GridPane.rowIndex="1" />
+                                          <TextField fx:id="textMistnostOznacecni" GridPane.columnIndex="1" />
+                                          <TextField fx:id="textMistnostKapacita" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Button fx:id="buttonMistnostVytvorit" mnemonicParsing="false" onAction="#createMistnostAction" text="Vytvořit" GridPane.rowIndex="2" />
+                                          <Button fx:id="buttonMistnostUpravit" disable="true" mnemonicParsing="false" onAction="#editMistnostAction" text="Upravit" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                       </children>
+                                    </GridPane>
+                                 </center>
+                              </BorderPane>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Obory">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <BorderPane prefHeight="741.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <top>
+                                    <TableView fx:id="tableObory" onMouseClicked="#getOborFromTableAction" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                      <columns>
+                                        <TableColumn fx:id="colOborId" prefWidth="75.0" text="id" />
+                                        <TableColumn fx:id="colOborNazev" prefWidth="256.0" text="Název" />
+                                          <TableColumn fx:id="colOborOdhad" prefWidth="279.0" text="Odhad studentů" />
+                                          <TableColumn fx:id="colOborForma" prefWidth="202.0" text="Forma" />
+                                      </columns>
+                                    </TableView>
+                                 </top>
+                                 <center>
+                                    <GridPane BorderPane.alignment="CENTER">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Název: " />
+                                          <Label text="Odhad studentů: " GridPane.rowIndex="1" />
+                                          <Button fx:id="buttonOborVytvorit" mnemonicParsing="false" onAction="#createOborAction" text="Vytvořit" GridPane.rowIndex="3" />
+                                          <Button fx:id="buttonOborUpravit" disable="true" mnemonicParsing="false" onAction="#editOborAction" text="Upravit" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <TextField fx:id="textOborNazev" GridPane.columnIndex="1" />
+                                          <TextField fx:id="textOborOdhad" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label text="Forma:" GridPane.rowIndex="2" />
+                                          <ComboBox fx:id="comboOborForma" prefHeight="31.0" prefWidth="272.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                       </children>
+                                    </GridPane>
+                                 </center>
+                                 <left>
+                                    <VBox prefHeight="539.0" prefWidth="477.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button fx:id="buttonOborSmazat" disable="true" mnemonicParsing="false" onAction="#deleteOborAction" text="Smazat" />
+                                       </children>
+                                    </VBox>
+                                 </left>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Plány">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <BorderPane layoutX="6.0" prefHeight="740.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0">
+                                 <top>
+                                    <TableView fx:id="tablePlany" onMouseClicked="#getPlanFromTableAction" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                      <columns>
+                                        <TableColumn fx:id="colPlanId" prefWidth="75.0" text="Id" />
+                                        <TableColumn fx:id="colPlanJmeno" prefWidth="319.0" text="Jméno" />
+                                          <TableColumn fx:id="colPlanRok" prefWidth="104.0" text="Rok" />
+                                          <TableColumn fx:id="colPlanObor" prefWidth="347.0" text="Obor" />
+                                      </columns>
+                                    </TableView>
+                                 </top>
+                                 <left>
+                                    <HBox prefHeight="539.0" prefWidth="534.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button fx:id="buttonPlanSmazat" disable="true" mnemonicParsing="false" onAction="#deletePlanAction" text="Smazat" />
+                                       </children>
+                                    </HBox>
+                                 </left>
+                                 <center>
+                                    <GridPane BorderPane.alignment="CENTER">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Jméno: " />
+                                          <Label text="Obor: " GridPane.rowIndex="2" />
+                                          <TextField fx:id="textPlanJmeno" GridPane.columnIndex="1" />
+                                          <ComboBox fx:id="comboPlanObor" prefHeight="25.0" prefWidth="240.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Button fx:id="buttonPlanPridat" mnemonicParsing="false" onAction="#createPlanAction" text="Přidat" GridPane.rowIndex="3" />
+                                          <Button fx:id="buttonPlanUpravit" disable="true" mnemonicParsing="false" onAction="#editPlanAction" text="Upravit" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label text="Rok:" GridPane.rowIndex="1" />
+                                          <TextField fx:id="textPlanRok" prefHeight="25.0" prefWidth="149.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                 </center>
+                              </BorderPane>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab fx:id="tabUsers" text="Uživatelé">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <BorderPane prefHeight="714.0" prefWidth="1154.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <left>
+                                    <ListView fx:id="listUser" onMouseClicked="#getUserFromUserList" prefHeight="708.0" prefWidth="324.0" BorderPane.alignment="CENTER" />
+                                 </left>
+                                 <center>
+                                    <GridPane BorderPane.alignment="CENTER">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints maxHeight="348.0" minHeight="10.0" prefHeight="289.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <GridPane>
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="407.0" minWidth="10.0" prefWidth="312.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="546.0" minWidth="10.0" prefWidth="512.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Label text="Uživatelské jméno:" />
+                                                <Label text="Heslo:" GridPane.rowIndex="1" />
+                                                <Label text="Vyučujicí: " GridPane.rowIndex="2" />
+                                                <Label text="Role:" GridPane.rowIndex="3" />
+                                                <Label text="Profilový obrázek" GridPane.rowIndex="4" />
+                                                <TextField fx:id="textUserName" GridPane.columnIndex="1" />
+                                                <PasswordField fx:id="textUserPassword" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <ComboBox fx:id="comboUserVyucujici" prefWidth="150.0" promptText="--nevybráno--" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <ComboBox fx:id="comboUserRole" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                   <children>
+                                                      <Button fx:id="buttonUserChooseFile" mnemonicParsing="false" onAction="#chooseFileAction" text="Vybrat soubor" />
+                                                      <ImageView fx:id="imageViewUser" fitHeight="87.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true" />
+                                                      <Label fx:id="labelUserImageURL" text="..." />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </GridPane>
+                                          <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                             <children>
+                                                <Button fx:id="buttonUserCreate" mnemonicParsing="false" onAction="#createUserAction" text="Přidat" />
+                                                <Button fx:id="buttonUserEdit" mnemonicParsing="false" onAction="#editUserAction" text="Upravit" />
+                                                <Button fx:id="buttonUserDelete" mnemonicParsing="false" onAction="#deleteUserAction" text="Smazat" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </GridPane>
+                                 </center>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </center>
+         <top>
+            <HBox alignment="CENTER_RIGHT" prefHeight="31.0" prefWidth="1148.0" BorderPane.alignment="CENTER" />
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

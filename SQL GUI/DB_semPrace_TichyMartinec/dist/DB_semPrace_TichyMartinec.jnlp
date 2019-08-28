@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="DB_semPrace_TichyMartinec.jnlp">
+  <information>
+    <title>DB_semPrace_TichyMartinec</title>
+    <vendor>ROR</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="DB_semPrace_TichyMartinec.jar" size="3829028" download="eager" />
+    <jar href="lib\ojdbc8.jar" size="4036257" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="DB_semPrace_TichyMartinec" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="main.Main"  name="DB_semPrace_TichyMartinec" />
+  <update check="always"/>
+</jnlp>

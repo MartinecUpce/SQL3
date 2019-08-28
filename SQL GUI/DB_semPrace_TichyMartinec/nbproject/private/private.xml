@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/entity/Mistnost.java</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/entity/Plan.java</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/db/RozvrhovaAktivitaManager.java</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/main/FXMLLoginController.java</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/db/KatedraManager.java</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/db/FakultaManager.java</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/entity/Obor.java</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/db/OborManager.java</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/libs/AlertWindow.java</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/entity/Predmet.java</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/entity/Fakulta.java</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/db/ObrazekManager.java</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/main/FXMLMain.fxml</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/db/VyucujiciManager.java</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/main/FXMLMainController.java</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/db/PredmetManager.java</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/main/FXMLLogin.fxml</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/entity/User.java</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/entity/Obrazek.java</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/libs/Rok.java</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/db/PracovisteManager.java</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/entity/Vyucujici.java</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/db/UserManager.java</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/entity/RozvrhovaAktivita.java</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/db/MistnostManager.java</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/db/PlanManager.java</file>
+            <file>file:/D:/Programování/Java/DB_semPrace_TichyMartinec/src/db/OracleConnector.java</file>
+        </group>
+    </open-files>
+</project-private>
